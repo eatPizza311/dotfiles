@@ -28,6 +28,15 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons", 
+          "MunifTanjim/nui.nvim",
+        }
+    },    
 }
 local opts = {}
 
@@ -51,3 +60,6 @@ config.setup({
     highlight = { enable = true },
     indent = { enable = true },
 })
+
+-- Invoking Neotree
+vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
