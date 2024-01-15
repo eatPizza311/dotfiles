@@ -7,3 +7,5 @@ vim.cmd("set shiftwidth=4")
 -- Changing leader
 vim.g.mapleader = " "
 
+-- Escap using jk
+vim.keymap.set("i", "jk", "<ESC>", {})
