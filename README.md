@@ -7,7 +7,7 @@
 
    # Windows
    mv ~\AppData\Local\nvim ~\AppData\Local\nvim.bak
-   mv ~\AppData\Local\nvim-data ~\AppData\Local\nvim-data
+   mv ~\AppData\Local\nvim-data ~\AppData\Local\nvim-data.bak
    ```
 2. Clone the configuration
    ```bash
