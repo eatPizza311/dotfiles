@@ -30,6 +30,18 @@ return {
 				name = "code",
 				a = "Action",
 			},
+            r = {
+                name = "rust",
+                c = {
+                    name = "crate",
+                    f = "Show features",
+                    d = "Show dependencies",
+                    H = "Open homepage",
+                    R = "Open repository",
+                    D = "Open documentation",
+                    C = "Open crate.io",
+                }
+            }
 		}, { prefix = "<leader>" })
 	end,
 }
