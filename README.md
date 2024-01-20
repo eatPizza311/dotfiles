@@ -17,3 +17,7 @@
    # Windows
    git clone https://github.com/eatPizza311/nvim_config.git ~/AppData/Local/nvim
    ```
+3. Mason install Linter, Formatter & Debugger
+     - codelldb
+     - ruff
+     - stylua
