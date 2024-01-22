@@ -12,6 +12,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"rust_analyzer",
+					"pyright",
 				},
 			})
 		end,
@@ -24,6 +25,10 @@ return {
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+			})
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+				filetypes = { "python" },
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
