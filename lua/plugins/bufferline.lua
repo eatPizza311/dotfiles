@@ -27,8 +27,7 @@ return {
 		local opts = { noremap = true, silent = true }
 
 		-- Move to previous/next
-		map("n", "<C-h>", "<Cmd>BufferLineCyclePrev<CR>", opts)
-		map("n", "<C-l>", "<Cmd>BufferLineCycleNext<CR>", opts)
+		map("n", "<TAB>", "<Cmd>BufferLineCycleNext<CR>", opts)
 		-- Close buffer
 		map("n", "<leader>x", "<Cmd>bd<CR>", opts)
 		-- Magic buffer-picking mode
