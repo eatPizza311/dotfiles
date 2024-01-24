@@ -17,7 +17,15 @@
    # Windows
    git clone https://github.com/eatPizza311/nvim_config.git ~/AppData/Local/nvim
    ```
+
+   > 🚨 For [toggleterm](https://github.com/akinsho/toggleterm.nvim) to work on Windows, one should set the Vim terminal accordingly (check [Using git-bash on windows ](https://github.com/akinsho/toggleterm.nvim/issues/463))
+   > ```lua
+   > vim.opt.shell = "C:/Users/xxx/AppData/Local/Programs/Git/bin/bash.exe" -- Change to your Gitbash path
+   > vim.opt.shellcmdflag = "-s"
+   > ```
 3. Mason install Linter, Formatter & Debugger
      - codelldb
-     - ruff
      - stylua
+     - ruff
+     - black
+     - mypy
