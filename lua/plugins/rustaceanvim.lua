@@ -1,5 +1,5 @@
 return {
-    "mrcjkb/rustaceanvim",
-    version = "^3", -- Recommended
-    ft = { "rust" },
+	"mrcjkb/rustaceanvim",
+	version = "^3", -- Recommended
+	ft = { "rust" },
 }
