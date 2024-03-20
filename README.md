@@ -2,7 +2,8 @@
 1. Clone this repo to home folder (`~`)
 2. Install [GNU Stow](https://www.gnu.org/software/stow/)
 3. `cd` into `~/dotfiles`
-4. Create symlinks:
+4. Create `~/.config/`, if the folder not exist
+5. Create symlinks:
      ```bash
      stow --target ~/.config .
      stow zsh
