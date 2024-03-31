@@ -35,3 +35,7 @@ vim.opt.inccommand = "split"
 -- other stuff
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.cmd([[ set nofoldenable]])
