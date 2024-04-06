@@ -1,41 +1,56 @@
--- Converting tabs to spaces
+-- Converts tabs to spaces
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
--- Changing leader
+
+-- Changes leader key to space
 vim.g.mapleader = " "
--- Escap using jk
+
+-- Escaps by jk
 vim.keymap.set("i", "jk", "<ESC>", {})
--- Line number
+
+-- Enables line number
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "auto"
--- Set cursor line highlighting
+
+-- Sets cursor line highlighting
 vim.cmd([[
   hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
   set cursorline
 ]])
+
 -- 80 ruler
 vim.opt.colorcolumn = "80"
--- show help and others below instead of above
+
+-- Shows help and others popup windows below instead of above
+-- and when it's verticle splitting show on right instead of left
 vim.opt.splitbelow = true
--- disable line wrapping
+vim.opt.splitright = true
+
+-- Disables line wrapping
 vim.opt.wrap = false
--- synchronize the system clipboard
+
+-- Synchronizes the system clipboard
 -- with neovim's clipboard
 vim.opt.clipboard = "unnamedplus"
--- keep my cursor centered vertically on the screen
+
+-- Keeps my cursor centered vertically on the screen
 vim.opt.scrolloff = 999
--- virtualedit for Visual block mode
+
+-- Virtualedit for Visual block mode
 -- enable cursor to be positioned where there is no actual character
 vim.opt.virtualedit = "block"
--- live preview the change in another window
-vim.opt.inccommand = "split"
--- other stuff
-vim.opt.ignorecase = true
-vim.opt.termguicolors = true
 
+-- Live preview the change in another window
+vim.opt.inccommand = "split"
+
+-- Code folding using treesitter
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
+
+-- Other stuff
+vim.opt.ignorecase = true
+vim.opt.termguicolors = true
