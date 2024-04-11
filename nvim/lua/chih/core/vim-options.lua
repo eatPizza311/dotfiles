@@ -1,56 +1,56 @@
--- Converts tabs to spaces
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+-- For conciseness
+local opt = vim.opt
 
--- Changes leader key to space
-vim.g.mapleader = " "
-
--- Escaps by jk
-vim.keymap.set("i", "jk", "<ESC>", {})
+-- Indent settings: convert tabs to spaces
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.autoindent = true
+opt.backspace = "indent,eol,start"
 
 -- Enables line number
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.signcolumn = "auto"
+opt.number = true
+opt.relativenumber = true
+opt.signcolumn = "yes"
+
+-- 80 ruler
+opt.colorcolumn = "80"
+
+-- Shows popup windows in desire position
+opt.splitbelow = true
+opt.splitright = true
+
+-- Disables line wrapping
+opt.wrap = false
+
+-- Synchronizes the system clipboard with neovim's clipboard
+opt.clipboard:append("unnamedplus")
+
+-- Keeps my cursor centered vertically on the screen
+opt.scrolloff = 999
+
+-- Virtualedit for Visual block mode
+-- enable cursor to be positioned where there is no actual character
+opt.virtualedit = "block"
+
+-- Live preview the change in another window
+opt.inccommand = "split"
+
+-- Code folding using treesitter
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+
+-- Search settings: smart case sensitive
+opt.ignorecase = true
+opt.smartcase = true
+
+-- Turn on termuicoloers (have to use iterm2 or any other true color terminal)
+opt.termguicolors = true
 
 -- Sets cursor line highlighting
 vim.cmd([[
   hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
   set cursorline
 ]])
-
--- 80 ruler
-vim.opt.colorcolumn = "80"
-
--- Shows help and others popup windows below instead of above
--- and when it's verticle splitting show on right instead of left
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
--- Disables line wrapping
-vim.opt.wrap = false
-
--- Synchronizes the system clipboard
--- with neovim's clipboard
-vim.opt.clipboard = "unnamedplus"
-
--- Keeps my cursor centered vertically on the screen
-vim.opt.scrolloff = 999
-
--- Virtualedit for Visual block mode
--- enable cursor to be positioned where there is no actual character
-vim.opt.virtualedit = "block"
-
--- Live preview the change in another window
-vim.opt.inccommand = "split"
-
--- Code folding using treesitter
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false
-
--- Other stuff
-vim.opt.ignorecase = true
-vim.opt.termguicolors = true
