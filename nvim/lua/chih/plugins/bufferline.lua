@@ -28,8 +28,6 @@ return {
 
 		-- Move to previous/next
 		map("n", "<TAB>", "<Cmd>BufferLineCycleNext<CR>", opts)
-		-- Close buffer
-		map("n", "<leader>x", "<Cmd>bd<CR>", opts)
 		-- Magic buffer-picking mode
 		map("n", "<C-p>", "<Cmd>BufferLinePick<CR>", opts)
 	end,
