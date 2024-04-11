@@ -13,10 +13,8 @@ return {
             dashboard.button("SPC f f", "󰱼  Find file"),
             dashboard.button("SPC f r", "󰊄  Recently opened files"),
             dashboard.button("SPC f g", "  Find word"),
+            dashboard.button("SPC w r", "  Open last session"),
             dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
-            -- button("SPC f m", "  Jump to bookmarks"),
-            -- button("SPC s l", "  Open last session"),
-            -- dashboard.button("SPC wr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
         }
 
         -- Dashboard header
