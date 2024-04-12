@@ -9,6 +9,7 @@ return {
 				build = "make",
 			},
 			"nvim-tree/nvim-web-devicons",
+			"folke/todo-comments.nvim",
 		},
 		config = function()
 			local telescope = require("telescope")
@@ -41,6 +42,7 @@ return {
 				"<cmd>Telescope grep_string<CR>",
 				{ desc = "Find string under cursor in cwd" }
 			)
+			keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find todos" })
 		end,
 	},
 	{
