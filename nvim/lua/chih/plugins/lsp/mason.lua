@@ -17,17 +17,28 @@ return {
         end,
     },
     {
-
         "williamboman/mason-lspconfig.nvim",
-        dependencies = { "mason.nvim" },
+        dependencies = {
+            "mason.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
         config = function()
             -- import mason-lspconfig
             local mason_lspconfig = require("mason-lspconfig")
+            local mason_tool_installer = require("mason-tool-installer")
 
             mason_lspconfig.setup({
                 ensure_installed = {
                     "lua_ls",
                     "pyright",
+                },
+            })
+
+            mason_tool_installer.setup({
+                ensure_installed = {
+                    "black",
+                    "ruff",
+                    "stylua",
                 },
             })
         end,
