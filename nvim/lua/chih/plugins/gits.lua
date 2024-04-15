@@ -1,14 +1,70 @@
 return {
-	{
-		"tpope/vim-fugitive",
-	},
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
+    {
+        "tpope/vim-fugitive",
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {
+            on_attach = function(bufnr)
+                local gs = package.loaded.gitsigns
 
-			vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", {})
-			vim.keymap.set("n", "<leader>gt", "<cmd>Gitsigns toggle_current_line_blame<CR>", {})
-		end,
-	},
+                local function map(mode, l, r, desc)
+                    vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+                end
+
+                -- navigation
+                map("n", "]h", gs.next_hunk, "Next hunk")
+                map("n", "[h", gs.prev_hunk, "Prev hunk")
+
+                -- actions
+                map("n", "<leader>hs", gs.stage_hunk, "Stage hunk")
+                map("n", "<leader>hr", gs.reset_hunk, "Reset hunk")
+                map("v", "<leader>hs", function()
+                    gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+                end, "Stage hunk")
+                map("v", "<leader>hr", function()
+                    gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+                end, "Reset hunk")
+
+                map("n", "<leader>hS", gs.stage_buffer, "Stage buffer")
+                map("n", "<leader>hR", gs.reset_buffer, "Reset buffer")
+
+                map("n", "<leader>hu", gs.undo_stage_hunk, "Undo stage hunk")
+
+                map("n", "<leader>hp", gs.preview_hunk, "Preview_hunk")
+
+                map("n", "<leader>hb", function()
+                    gs.blame_line({ full = true })
+                end, "Blame line")
+                map("n", "<leader>hB", gs.toggle_current_line_blame, "Toggle line blame")
+
+                map("n", "<leader>hd", gs.diffthis, "Diff this")
+                map("n", "<leader>hD", function()
+                    gs.diffthis("~")
+                end, "Diff this ~")
+
+                -- Text object
+                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
+            end,
+        },
+    },
+    {
+        "kdheepak/lazygit.nvim",
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        -- setting the keybinding for LazyGit with 'keys' is recommended in
+        -- order to load the plugin when the command is run for the first time
+        keys = {
+            { "<leader>lg", "<cmd>LazyGit<CR>", desc = "Open lazy git" },
+        },
+    },
 }
