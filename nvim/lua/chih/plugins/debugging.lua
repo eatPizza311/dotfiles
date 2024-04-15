@@ -36,7 +36,8 @@ return {
 		}
 
 		-- setup keymapping
-		vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, {})
-		vim.keymap.set("n", "<Leader>dc", dap.continue, {})
+		local keymap = vim.keymap
+		keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+		keymap.set("n", "<Leader>dc", dap.continue, { desc = "Continue" })
 	end,
 }

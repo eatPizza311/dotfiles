@@ -13,4 +13,4 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 -- Close buffer
-keymap.set("n", "<leader>x", "<Cmd>bd<CR>", { desc = "Close current buffer" })
+keymap.set("n", "<leader>X", "<Cmd>bd<CR>", { desc = "Close current buffer" })
