@@ -20,6 +20,7 @@ return {
             d = { name = "debug" },
             l = { name = "lazygit" },
             r = { name = "rename/restart" },
+            t = { name = "test" },
         }, { prefix = "<leader>" })
 
         wk.register({
