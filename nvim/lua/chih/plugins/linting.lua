@@ -5,8 +5,12 @@ return {
         local lint = require("lint")
 
         lint.linters_by_ft = {
-            python = { "mypy", "pylint" },
+            python = { "mypy" },
         }
+        -- Set mypy to work in virtualenv
+        local mypy = lint.linters.mypy
+        mypy.cmd = "python"
+        mypy.args = vim.list_extend({ "-m", "mypy" }, mypy.args)
 
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
