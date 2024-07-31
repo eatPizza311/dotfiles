@@ -1,11 +1,11 @@
 # How to use?
-1. Clone this repo to home folder (`~`)
+1. Clone this repo to the home folder (`~`)
 2. Install [GNU Stow](https://www.gnu.org/software/stow/)
-3. Create `~/.config/`, if the folder not exist
+3. Create `~/.config/` if the folder does not exist
 4. `cd` into `~/dotfiles`
-6. Create symlinks:
+6. Use stow to create symlinks:
      ```bash
-     stow --target ~/.config .
+     stow --target ~/.config . # Use `stow --target ~/.config -D .` to delete
      stow zsh
      ```
 
