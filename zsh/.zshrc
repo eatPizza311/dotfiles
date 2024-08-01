@@ -42,6 +42,17 @@ bindkey '^n' history-search-forward
 
 
 # =====================
+#       Aliases
+# =====================
+alias ls='ls -hlF --color=auto'
+alias ..='cd ../'
+alias tree="tree -alI 'node_modules|.git'"
+alias grep='grep --color=always'
+alias grepFind='grep --exclude-dir=node_modules -nr . -e'
+alias mkdir='mkdir -p'
+
+
+# =====================
 #       History
 # =====================
 HISTSIZE=5000
@@ -62,6 +73,9 @@ setopt hist_find_no_dups
 # =====================
 # Load auto completions
 autoload -U compinit && compinit
+# Case-insensitive tab completion and coloring
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
