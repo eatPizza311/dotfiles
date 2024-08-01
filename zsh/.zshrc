@@ -6,10 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # =====================
 #     Plugin Manager
 # =====================
-
 # Directory to store zinit and Plugin
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -19,6 +19,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Source/Load Zinit
 source "${ZINIT_HOME}/zinit.zsh"
+
 
 # =====================
 #       Plugins
@@ -36,6 +37,25 @@ zinit light zsh-users/zsh-autosuggestions
 #      Keybindings
 # =====================
 bindkey -e # Emacs mode
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+
+# =====================
+#       History
+# =====================
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+export HISTFILE=~/.zsh_history
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+
 
 # =====================
 #  Other Customizations
