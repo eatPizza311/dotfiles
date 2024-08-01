@@ -11,6 +11,8 @@
 
 # Other tools
 - [Zsh](https://www.zsh.org/)
-  - [zplug](https://github.com/zplug/zplug)
+  - [zinit](https://github.com/zdharma-continuum/zinit)
+  - [zoxide](https://github.com/ajeetdsouza/zoxide)
+  - [fzf](https://github.com/junegunn/fzf)
 - [Tmux](https://github.com/tmux/tmux)
 - [NeoVim](https://neovim.io/)
