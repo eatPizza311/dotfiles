@@ -64,7 +64,7 @@ return {
 
                 opts.desc = "Show inlay hint"
                 keymap.set({ "n", "v" }, "<leader>ch", function()
-                    vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+                    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
                 end, opts)
             end,
         })
