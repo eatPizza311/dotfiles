@@ -110,6 +110,18 @@ return {
                     filetypes = { "python" },
                 })
             end,
+            ["docker_compose_language_service"] = function()
+                lspconfig["docker_compose_language_service"].setup({
+                    capabilities = capabilities,
+                    filetypes = { "yaml" },
+                })
+            end,
+            ["sqlls"] = function()
+                lspconfig["sqlls"].setup({
+                    capabilities = capabilities,
+                    filetypes = { "sql" },
+                })
+            end,
         })
     end,
 }
