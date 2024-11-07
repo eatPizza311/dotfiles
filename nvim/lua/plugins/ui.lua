@@ -18,4 +18,27 @@ return {
       timeout = 10000,
     },
   },
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    opts = function(_, opts)
+      local logo = {
+        [[                                                        ]],
+        [[          ▀████▀▄▄              ▄█      ╔══════════════╗]],
+        [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█      ║ Pi-ka-chuuu! ║]],
+        [[    ▄        █          ▀▀▀▀▄  ▄▀       ╚══════════════╝]],
+        [[   ▄▀ ▀▄      ▀▄              ▀▄▀                       ]],
+        [[  ▄▀    █     █▀   ▄█▀▄      ▄█                         ]],
+        [[  ▀▄     ▀▄  █     ▀██▀     ██▄█                        ]],
+        [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █                       ]],
+        [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀                       ]],
+        [[   █   █  █      ▄▄           ▄▀                        ]],
+        [[                                                        ]],
+      }
+      opts.config.header = logo
+      opts.config.footer = function()
+        return { "Anything worth doing well is worth doing poorly at first." }
+      end
+    end,
+  },
 }
