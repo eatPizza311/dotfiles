@@ -16,11 +16,11 @@ return {
       keymap_opts.desc = "Open crate homepage"
       keymap.set("n", "<leader>cH", "<CMD>Crate open_homepage<CR>", keymap_opts)
       keymap_opts.desc = "Open crate repository"
-      keymap.set("n", "<leader>cR", "<CMD>Crate open_repository<CR>", keymap_opts)
+      keymap.set("n", "<leader>cG", "<CMD>Crate open_repository<CR>", keymap_opts)
       keymap_opts.desc = "Open crate documentation"
       keymap.set("n", "<leader>cD", "<CMD>Crate open_documentation<CR>", keymap_opts)
       keymap_opts.desc = "Open crate.io"
-      keymap.set("n", "<leader>cC", "<CMD>Crate open_crates_io<CR>", keymap_opts)
+      keymap.set("n", "<leader>cC", "<CMD>Crate open_cratesio<CR>", keymap_opts)
     end,
   },
 }
