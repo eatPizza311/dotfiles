@@ -19,6 +19,7 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "solarized-osaka" } },
     -- import/override with your plugins
+    -- LSP
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.formatting.black" },
     { import = "lazyvim.plugins.extras.lang.rust" },
@@ -28,6 +29,13 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.toml" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
+    -- Editor
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    -- coding
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    -- Ui
+    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    -- Plugins
     { import = "plugins" },
   },
   defaults = {
