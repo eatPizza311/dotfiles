@@ -19,26 +19,23 @@ return {
     },
   },
   {
-    "nvimdev/dashboard-nvim",
+    "folke/snacks.nvim",
     event = "VimEnter",
     opts = function(_, opts)
       local logo = {
-        [[                                                        ]],
-        [[          ▀████▀▄▄              ▄█      ╔══════════════╗]],
-        [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█      ║ Pi-ka-chuuu! ║]],
-        [[    ▄        █          ▀▀▀▀▄  ▄▀       ╚══════════════╝]],
-        [[   ▄▀ ▀▄      ▀▄              ▀▄▀                       ]],
-        [[  ▄▀    █     █▀   ▄█▀▄      ▄█                         ]],
-        [[  ▀▄     ▀▄  █     ▀██▀     ██▄█                        ]],
-        [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █                       ]],
-        [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀                       ]],
-        [[   █   █  █      ▄▄           ▄▀                        ]],
-        [[                                                        ]],
+        [[                                                        
+                  ▀████▀▄▄              ▄█      ╔══════════════╗
+                    █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█      ║ Pi-ka-chuuu! ║
+            ▄        █          ▀▀▀▀▄  ▄▀       ╚══════════════╝
+           ▄▀ ▀▄      ▀▄              ▀▄▀                       
+          ▄▀    █     █▀   ▄█▀▄      ▄█                         
+          ▀▄     ▀▄  █     ▀██▀     ██▄█                        
+           ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █                       
+            █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀                       
+           █   █  █      ▄▄           ▄▀                        
+                                                                ]],
       }
-      opts.config.header = logo
-      opts.config.footer = function()
-        return { "Anything worth doing well is worth doing poorly at first." }
-      end
+      opts.dashboard.preset.header = logo
     end,
   },
 }
